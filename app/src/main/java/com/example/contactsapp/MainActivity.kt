@@ -1,10 +1,11 @@
 package com.example.contactsapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Contacts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contactsapp.databinding.ActivityMainBinding
+import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
@@ -12,23 +13,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
 
     override fun onResume() {
         super.onResume()
         displayContacts()
+        binding.tvAdd.setOnClickListener {
+            val intent=Intent(this.displayContacts()::class.java)
+            startActivity(intent)
+        }
+
     }
+
+    private fun Intent(java: Class<out Unit>): Intent? {
+        return null
+
+    }
+
     fun displayContacts(){
-        val name1=ContactData("cynthia","0713504579","cynthiawambua64@gmail.com"," ")
-        val name2=ContactData("jeff","0721264170","jeffwambua54@gmail.com"," ")
-        val name3=ContactData("judy","0745678923","judymuthini56@gmail.com"," ")
-        val name4=ContactData("ken","017895678","ken78@gmail.com"," ")
-        val name5=ContactData("oplipo","0714567890","oplipo@gmail.com"," ")
-        val name6=ContactData("njemp","0145672389","njemp89@gmail.com"," ")
+        val name1=ContactsData("cynthia","0713504579","cynthiawambua64@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQv36bQi4sBqhUsZAXpyPoxylHrIlnvPqIqQ&usqp=CAU")
+        val name2=ContactsData("jeff","0721264170","jeffwambua54@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKH6jiyvll2_mf962tW-pjpsFZs4mib7ZlFQ&usqp=CAU")
+        val name3=ContactsData("judy","0745678923","judymuthini56@gmail.com"," https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw46iH7rl1FR91HIrT9DwIZ0JJH-diaSXl3w&usqp=CAU")
+        val name4=ContactsData("ken","017895678","ken78@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4EO4mBYy5wcJYmUekTrDMFCN9MlR6sP3mJA&usqp=CAU")
+        val name5=ContactsData("oplipo","0714567890","oplipo@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3-sz8N_5WCbp2jABTPlwZqz5XnZ7QtoBbnw&usqp=CAU")
+        val name6=ContactsData("njemp","0145672389","njemp89@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-17FoYwtUFCOW0aLWHrkIRxJ83Up7UF9XAg&usqp=CAU")
         val name= listOf(name1,name2,name3,name4,name5,name6)
         val contactData= ContactsRvAdapter(name)
         binding.rvContacts.layoutManager=LinearLayoutManager(this)
         binding.rvContacts.adapter=contactData
 
+    }
+
+    private fun ContactsData(
+        name: String,
+        phonenumber: String,
+        email: String,
+        image: String
+    ): ContactsData {
+        TODO("Not yet implemented")
     }
 }

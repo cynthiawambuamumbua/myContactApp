@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">contactsapp</string>
+    <string name="name_required_error_msg" />
+    <string name="phone_number_required_error_msg" />
+    <string name="failed_to_save_contact_error_msg" />
+    <string name="contact_saved_successfully_msg" />
 </resources>

@@ -4,4 +4,6 @@
     <string name="phone_number_required_error_msg" />
     <string name="failed_to_save_contact_error_msg" />
     <string name="contact_saved_successfully_msg" />
+    <string name="phonenumber">phonenumber</string>
+    <string name="etphonenumber" />
 </resources>

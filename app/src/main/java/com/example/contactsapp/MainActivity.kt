@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contactsapp.databinding.ActivityMainBinding
-import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
@@ -19,22 +18,16 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         displayContacts()
-        binding.tvAdd.setOnClickListener {
-            val intent=Intent(this.displayContacts()::class.java)
+        binding.flbtnAdd.setOnClickListener {
+            val intent=Intent(this,AddContact::class.java)
             startActivity(intent)
         }
 
     }
-
-    private fun Intent(java: Class<out Unit>): Intent? {
-        return null
-
-    }
-
     fun displayContacts(){
         val name1=ContactsData("cynthia","0713504579","cynthiawambua64@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQv36bQi4sBqhUsZAXpyPoxylHrIlnvPqIqQ&usqp=CAU")
         val name2=ContactsData("jeff","0721264170","jeffwambua54@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKH6jiyvll2_mf962tW-pjpsFZs4mib7ZlFQ&usqp=CAU")
-        val name3=ContactsData("judy","0745678923","judymuthini56@gmail.com"," https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw46iH7rl1FR91HIrT9DwIZ0JJH-diaSXl3w&usqp=CAU")
+        val name3=ContactsData("judy","0745678923","judymuthini56@gmail.com"," https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDvYYiAt_WjzQ5lueNSWMwHNjp7UV5mjBXOg&usqp=CAU")
         val name4=ContactsData("ken","017895678","ken78@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4EO4mBYy5wcJYmUekTrDMFCN9MlR6sP3mJA&usqp=CAU")
         val name5=ContactsData("oplipo","0714567890","oplipo@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3-sz8N_5WCbp2jABTPlwZqz5XnZ7QtoBbnw&usqp=CAU")
         val name6=ContactsData("njemp","0145672389","njemp89@gmail.com","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-17FoYwtUFCOW0aLWHrkIRxJ83Up7UF9XAg&usqp=CAU")
@@ -45,12 +38,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun ContactsData(
-        name: String,
-        phonenumber: String,
-        email: String,
-        image: String
-    ): ContactsData {
-        TODO("Not yet implemented")
-    }
 }

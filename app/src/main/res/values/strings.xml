@@ -6,4 +6,7 @@
     <string name="contact_saved_successfully_msg" />
     <string name="phonenumber">phonenumber</string>
     <string name="etphonenumber" />
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="email">Email</string>
 </resources>
